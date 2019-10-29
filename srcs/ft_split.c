@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   ft_split.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 16:28:34 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 13:27:16 by aaugusti      ########   odam.nl         */
+/*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
+/*   Updated: 2019/10/29 14:09:41 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+char	**ft_split(char const *s, char c)
 {
-	size_t	i;
+	char	*b;
+	char	*e;
+	char	**res;
+	int		i;
+
+	b = (char*)s;
+	res = (char**)malloc(sizeof(char*) * (ft_cchr(s, c) - 1));
+	e = b;
 
 	i = 0;
-	while (i < len)
+	while (*e)
 	{
-		((unsigned char*)b)[i] = (unsigned char)c;
+		while (*e != c && *e)
+			e++;
+		res[i] = (char*)malloc(sizeof(char) * (e - b + 1));
+		if (e == b)
+			res[i][0] = '\0';
+		else
+			ft_strlcpy(res[i], b, e - b + 1);
+		e++;
+		b = e;
 		i++;
 	}
-	return (b);
+	return (res);
 }

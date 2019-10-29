@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:46:45 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 11:01:02 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 13:58:25 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,5 @@ char	*ft_strchr(const char *s, int c)
 			return ((char*)s);
 		s++;
 	}
-	if (c == 0)
-		return ((char*)s);
 	return (NULL);
 }

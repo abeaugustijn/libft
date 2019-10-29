@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 16:28:34 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 13:27:16 by aaugusti      ########   odam.nl         */
+/*   Created: 2019/10/29 12:23:10 by aaugusti       #+#    #+#                */
+/*   Updated: 2019/10/29 12:23:57 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <unistd.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char*)b)[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	write(fd, &c, 1);
 }

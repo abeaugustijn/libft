@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 16:28:34 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 13:27:16 by aaugusti      ########   odam.nl         */
+/*   Created: 2019/10/29 14:01:59 by aaugusti       #+#    #+#                */
+/*   Updated: 2019/10/29 14:07:39 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*res;
+	int		s1_len;
+	int		s2_len;
+	int		tot_len;
 
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char*)b)[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	tot_len = s1_len + s2_len;
+	res = (char*)malloc(tot_len + 1);
+	ft_strlcpy(res, s1, s1_len + 1);
+	ft_strlcat(res, s2, s1_len + s2_len + 1);
+	return (res);
 }

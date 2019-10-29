@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 16:28:34 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 13:27:16 by aaugusti      ########   odam.nl         */
+/*   Created: 2019/10/29 15:09:28 by aaugusti       #+#    #+#                */
+/*   Updated: 2019/10/29 15:17:01 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char	*res;
 
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char*)b)[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
+	res = (char*)malloc(len + 1);
+	if (!res)
+		return (NULL);
+	ft_strlcpy(res, s + start, len + 1);
+	return (res);
 }

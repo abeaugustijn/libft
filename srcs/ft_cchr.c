@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   ft_cchr.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 16:28:34 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 13:27:16 by aaugusti      ########   odam.nl         */
+/*   Created: 2019/10/29 13:32:17 by aaugusti       #+#    #+#                */
+/*   Updated: 2019/10/29 13:41:29 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_cchr(const char *s, char c)
 {
-	size_t	i;
+	int		res;
 
-	i = 0;
-	while (i < len)
+	res = 0;
+	while (*s)
 	{
-		((unsigned char*)b)[i] = (unsigned char)c;
-		i++;
+		if (*s == c)
+			res++;
+		s++;
 	}
-	return (b);
+	return (res);
 }
