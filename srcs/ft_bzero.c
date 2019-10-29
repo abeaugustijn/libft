@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 16:40:59 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 11:00:12 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 21:18:48 by abe           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char*)s)[i] = '\0';
-		i++;
-	}
+	ft_memset(s, '\0', n);
 }
