@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/10/29 15:07:37 by aaugusti      ########   odam.nl          #
+#    Updated: 2019/10/29 21:15:05 by abe           ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ SRCS		=	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
 	ft_memmove ft_memset ft_strchr ft_strlcat ft_strlcpy ft_strlen\
 	ft_strncmp ft_strnstr ft_strrchr ft_tolower ft_toupper ft_calloc\
 	ft_itoa ft_putchar_fd ft_putendl_fd ft_putstr_fd ft_putnbr_fd ft_cchr\
-	ft_split ft_strjoin ft_strmapi ft_strtrim
+	ft_split ft_strjoin ft_strmapi ft_strtrim ft_substr ft_lstprint ft_lstnew\
+	ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone\
+	ft_lstclear ft_lstiter ft_lstmap
 CFILES		=	$(SRCS:%=srcs/%.c)
 OFILES		=	$(CFILES:.c=.o)
 INCLUDES	=	./includes
