@@ -6,12 +6,11 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 20:25:07 by abe            #+#    #+#                */
-/*   Updated: 2019/10/28 20:34:30 by abe           ########   odam.nl         */
+/*   Updated: 2019/10/29 11:00:36 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

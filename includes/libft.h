@@ -6,13 +6,14 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 09:56:37 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 10:59:50 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
+
+typedef unsigned long size_t;
 
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
