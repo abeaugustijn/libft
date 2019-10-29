@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 16:28:34 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/28 16:38:45 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 10:44:40 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
 	while (i < len)

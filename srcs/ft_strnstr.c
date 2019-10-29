@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:46:30 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 10:08:15 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 10:48:48 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
-	int n;
+	size_t i;
+	size_t n;
 
 	if (!*needle)
 		return ((char*)haystack);

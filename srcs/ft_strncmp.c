@@ -6,7 +6,7 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:11:29 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 09:55:34 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 10:48:35 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 1;
 	if (n <= 0)

@@ -6,15 +6,16 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 16:40:59 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 09:48:55 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 10:42:49 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
