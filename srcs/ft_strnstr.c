@@ -6,32 +6,20 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:46:30 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/28 14:36:58 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/10/29 10:08:15 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
 
-static int	ft_strlen(char *str)
-{
-	int	res;
-
-	res = 0;
-	while (*str)
-	{
-		str++;
-		res++;
-	}
-	return (res);
-}
-
-char		*ft_strnstr(char *haystack, char *needle, int len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int i;
 	int n;
 
 	if (!*needle)
-		return (haystack);
+		return ((char*)haystack);
 	n = 0;
 	while (*haystack && n < len)
 	{
@@ -43,7 +31,7 @@ char		*ft_strnstr(char *haystack, char *needle, int len)
 			i++;
 		}
 		if (i == ft_strlen(needle))
-			return (haystack);
+			return ((char*)haystack);
 		haystack++;
 		n++;
 	}
