@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                      +:+                     #
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/10/29 21:50:49 by abe           ########   odam.nl          #
+#    Updated: 2019/10/31 18:43:38 by abe              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ FLAGS		=	-Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	ac rcs $(NAME).a $(OFILES)
+	ar -rv $(NAME).a $(OFILES)
 	@echo "Done"
 
 srcs/%.o: srcs/%.c
