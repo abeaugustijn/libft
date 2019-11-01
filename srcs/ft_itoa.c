@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 11:47:31 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 12:19:05 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 16:06:16 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int	ft_numlen(int n)
 	int	res;
 
 	res = 0;
+	if (n == 0)
+		return (1);
 	if (n == -2147483648)
 		return (11);
 	if (n < 0)
@@ -37,11 +39,22 @@ static char	*exception(int n)
 {
 	char	*res;
 
-	res = malloc(13);
+	res = (char *)malloc((n == 0) ? 2 : 13);
 	if (n == 0)
 		ft_strlcpy(res, "0", 2);
 	else
 		ft_strlcpy(res, "-2147483648", 12);
+	return (res);
+}
+
+static char	*gimme_mem(len)
+{
+	char	*res;
+
+	res = (char *)malloc(len);
+	if (res == NULL)
+		return (NULL);
+	res[len - 1] = '\0';
 	return (res);
 }
 
@@ -54,7 +67,9 @@ char		*ft_itoa(int n)
 
 	is_neg = n < 0;
 	n_len = ft_numlen(n);
-	res = (char*)malloc(n_len + 1 + is_neg);
+	res = gimme_mem(n_len + 1);
+	if (res == NULL)
+		return (NULL);
 	if (n == -2147483648 || n == 0)
 		return (exception(n));
 	if (is_neg)
@@ -62,13 +77,11 @@ char		*ft_itoa(int n)
 		*res = '-';
 		n *= -1;
 	}
-	res[n_len - 1] = '\0';
-	i = 0;
-	while (i < n_len)
+	i = -1;
+	while (++i < n_len - is_neg)
 	{
-		res[n_len - 1 - i + is_neg] = (char)(n % 10 + '0');
+		res[n_len - 1 - i] = (char)(n % 10 + '0');
 		n /= 10;
-		i++;
 	}
 	return (res);
 }

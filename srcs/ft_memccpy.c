@@ -6,7 +6,7 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 19:50:30 by abe            #+#    #+#                */
-/*   Updated: 2019/10/29 11:00:28 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 10:47:37 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 			break ;
 		i++;
 	}
-	if (i == n)
+	if (i >= n)
 		return (NULL);
-	return (dest + i);
+	return (dest + i + 1);
 }

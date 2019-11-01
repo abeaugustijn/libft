@@ -6,20 +6,28 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:45:05 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 09:50:07 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 16:10:30 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
+static void	skip_ws(char **str)
+{
+	while (**str == '\t' || **str == '\n' || **str == ' ' || **str == '\r' ||
+			**str == '\f' || **str == '\v')
+		(*str)++;
+	if (**str == '+')
+		(*str)++;
+}
+
 int			ft_atoi(const char *str)
 {
-	int	is_neg;
-	int	res;
+	long int			is_neg;
+	unsigned long int	res;
+	unsigned long int	prev_res;
 
-	if (*str == '\t' || *str == '\n' || *str == ' ' || *str == '\r' ||
-			*str == '+')
-		str++;
+	skip_ws((char **)&str);
 	is_neg = 1;
 	if (*str == '-')
 	{
@@ -29,11 +37,14 @@ int			ft_atoi(const char *str)
 	res = 0;
 	while (*str)
 	{
+		prev_res = res;
 		if (!ft_isdigit(*str))
-			return (0);
+			break ;
 		res *= 10;
 		res += *str - '0';
+		if (prev_res > res)
+			return (is_neg == -1 ? 0 : -1);
 		str++;
 	}
-	return (res * is_neg);
+	return ((int)res * is_neg);
 }
