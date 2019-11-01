@@ -6,10 +6,11 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 19:45:39 by abe            #+#    #+#                */
-/*   Updated: 2019/11/01 10:43:23 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 17:52:23 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <libft.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)

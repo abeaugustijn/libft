@@ -6,10 +6,11 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 11:47:31 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 16:06:16 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 17:55:37 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <libft.h>
 #include <stdlib.h>
 
@@ -38,8 +39,13 @@ static int	ft_numlen(int n)
 static char	*exception(int n)
 {
 	char	*res;
+	size_t	mem_size;
 
-	res = (char *)malloc((n == 0) ? 2 : 13);
+	if (n == 0)
+		mem_size = 2;
+	else
+		mem_size = 13;
+	res = (char *)malloc(mem_size);
 	if (n == 0)
 		ft_strlcpy(res, "0", 2);
 	else
@@ -47,7 +53,7 @@ static char	*exception(int n)
 	return (res);
 }
 
-static char	*gimme_mem(len)
+static char	*gimme_mem(size_t len)
 {
 	char	*res;
 
@@ -67,7 +73,7 @@ char		*ft_itoa(int n)
 
 	is_neg = n < 0;
 	n_len = ft_numlen(n);
-	res = gimme_mem(n_len + 1);
+	res = gimme_mem((size_t)n_len + 1);
 	if (res == NULL)
 		return (NULL);
 	if (n == -2147483648 || n == 0)
@@ -77,11 +83,12 @@ char		*ft_itoa(int n)
 		*res = '-';
 		n *= -1;
 	}
-	i = -1;
-	while (++i < n_len - is_neg)
+	i = 0;
+	while (i < n_len - is_neg)
 	{
 		res[n_len - 1 - i] = (char)(n % 10 + '0');
 		n /= 10;
+		i++;
 	}
 	return (res);
 }

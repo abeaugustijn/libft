@@ -6,10 +6,11 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:11:29 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/10/29 11:01:23 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 17:53:57 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <libft.h>
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)

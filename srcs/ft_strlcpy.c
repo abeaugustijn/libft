@@ -6,10 +6,11 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 21:36:58 by abe            #+#    #+#                */
-/*   Updated: 2019/10/29 11:01:16 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 17:53:41 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <libft.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)

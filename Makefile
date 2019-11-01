@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/01 14:05:44 by aaugusti      ########   odam.nl          #
+#    Updated: 2019/11/01 17:16:48 by aaugusti      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,17 @@ SRCS		=	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
 	ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone\
 	ft_lstclear ft_lstiter ft_lstmap ft_strdup ft_strlen_c
 CFILES		=	$(SRCS:%=srcs/%.c)
-OFILES		=	$(CFILES:.c=.o)
+OFILES		=	$(SRCS:%=obj/%.o)
 INCLUDES	=	./includes
 FLAGS		=	-Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
-	ar -rv $(NAME).a $(OFILES)
+$(NAME): $(OFILES) $(INCLUDES)/$(NAME).h
+	ar r $(NAME).a $(OFILES)
 	@echo "Done"
 
-srcs/%.o: srcs/%.c
+obj/%.o: srcs/%.c
 	@echo "Compiling: $<"
 	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 

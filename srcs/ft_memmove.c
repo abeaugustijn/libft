@@ -6,10 +6,11 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 20:17:50 by abe            #+#    #+#                */
-/*   Updated: 2019/11/01 17:10:57 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 17:52:26 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <libft.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)

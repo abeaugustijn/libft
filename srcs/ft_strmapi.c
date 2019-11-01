@@ -6,10 +6,11 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:45:35 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 15:08:32 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 17:53:52 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <libft.h>
 #include <stdlib.h>
 
