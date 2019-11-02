@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 18:00:31 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/01 18:05:45 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char			*ft_strchr(const char *s, int c);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle,
-		size_t len);
+				size_t len);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
 int				ft_tolower(int c);
@@ -67,6 +67,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-		void (*del)(void *));
+				void (*del)(void *));
 
 #endif
