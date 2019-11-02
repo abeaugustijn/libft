@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/02 11:32:35 by aaugusti      ########   odam.nl          #
+#    Updated: 2019/11/02 15:05:45 by aaugusti      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ SRCS			=	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
 BONUS_SRCS		=	ft_lstadd_back_bonus ft_lstadd_front_bonus ft_lstclear_bonus\
 	ft_lstdelone_bonus ft_lstiter_bonus ft_lstlast_bonus ft_lstmap_bonus\
 	ft_lstnew_bonus ft_lstsize_bonus
-CFILES			=	$(SRCS:%=srcs/%.c)
-OFILES			=	$(SRCS:%=obj/%.o)
-BONUS_CFILES	=	$(BONUS_SRCS:%=srcs/%.c)
-BONUS_OFILES	=	$(BONUS_SRCS:%=obj/%.o)
+CFILES			=	$(SRCS:%=%.c)
+OFILES			=	$(SRCS:%=%.o)
+BONUS_CFILES	=	$(BONUS_SRCS:%=%.c)
+BONUS_OFILES	=	$(BONUS_SRCS:%=%.o)
 INCLUDES		=	./includes
 FLAGS			=	-Wall -Werror -Wextra
 
@@ -35,7 +35,7 @@ $(NAME): $(OFILES)
 	$(AR_COMMAND) $(NAME).a $(OFILES)
 	@echo "Done"
 
-obj/%.o: srcs/%.c
+%.o: %.c
 	@echo "Compiling: $<"
 	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
