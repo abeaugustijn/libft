@@ -6,12 +6,12 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:45:35 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 15:38:25 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:41:06 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

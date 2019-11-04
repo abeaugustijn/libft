@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnbr_fd.c                                     :+:    :+:            */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:14:37 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 10:27:58 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 19:40:17 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 #include <stdlib.h>
 
 static int	ft_numlen(int n)

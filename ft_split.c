@@ -6,12 +6,12 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 15:37:34 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:42:46 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 #include <stdlib.h>
 
 static void	del(void *content)
@@ -50,14 +50,12 @@ char		**ft_split(char const *s, char c)
 {
 	char	*b;
 	t_list	*res;
-	int		i;
 	char	*to_add_str;
 	size_t	to_add_len;
 
 	if (s == NULL)
 		return (NULL);
 	b = (char*)s;
-	i = 0;
 	res = NULL;
 	while (*b)
 	{

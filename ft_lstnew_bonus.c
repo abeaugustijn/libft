@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstnew.c                                        :+:    :+:            */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 15:39:54 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 17:51:17 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 19:39:19 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 #include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)

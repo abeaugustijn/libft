@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 20:25:07 by abe            #+#    #+#                */
-/*   Updated: 2019/11/01 17:52:17 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 19:39:39 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstclear.c                                      :+:    :+:            */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 19:46:00 by abe            #+#    #+#                */
-/*   Updated: 2019/11/01 17:50:51 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 19:38:58 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 #include <stdlib.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
