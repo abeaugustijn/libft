@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:14:37 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 16:13:51 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 10:27:58 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void		ft_putnbr_fd(int n, int fd)
 		n *= -1;
 	}
 	i = -1;
+	res[n_len] = '\0';
 	while (++i < n_len - is_neg)
 	{
 		res[n_len - 1 - i] = (char)(n % 10 + '0');
