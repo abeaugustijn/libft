@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strmapi.c                                       :+:    :+:            */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:45:35 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 17:53:52 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 15:38:25 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	s_len;
 	unsigned int	i;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
 	s_len = (unsigned int)ft_strlen(s);
 	res = (char*)malloc(s_len + 1);
 	if (res == NULL)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_split.c                                         :+:    :+:            */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 17:53:06 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 15:37:34 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char		**ft_split(char const *s, char c)
 	char	*to_add_str;
 	size_t	to_add_len;
 
+	if (s == NULL)
+		return (NULL);
 	b = (char*)s;
 	i = 0;
 	res = NULL;

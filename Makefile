@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/04 10:58:21 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/04 15:43:33 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,11 +48,11 @@ fclean: _clean
 	@rm -f $(NAME)
 
 _clean:
-	@rm -f $(OFILES) $(BONUS_OFILES) $(NAME)
+	@rm -f $(OFILES) $(BONUS_OFILES)
 
 re: fclean all 
 
-bonus: $(OFILES) $(BONUS_OFILES)
+bonus: $(OFILES) $(BONUS_OFILES) $(NAME)
 	@echo "Linking bonus lib"
 	@$(AR_COMMAND) $(NAME) $(OFILES) $(BONUS_OFILES)
 	@echo "Bonus done"

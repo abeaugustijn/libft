@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strjoin.c                                       :+:    :+:            */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:01:59 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 13:16:54 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 15:13:58 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		s2_len;
 	int		tot_len;
 
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	tot_len = s1_len + s2_len;

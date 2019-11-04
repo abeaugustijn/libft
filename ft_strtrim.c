@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strtrim.c                                       :+:    :+:            */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:54:19 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/01 17:54:15 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/04 15:36:19 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*b;
 	char	*e;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	set_len = ft_strlen(set);
 	b = (char*)s1;
 	e = (char*)s1 + ft_strlen(s1) - 1;
