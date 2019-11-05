@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                      +:+                     #
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/05 14:33:20 by aaugusti      ########   odam.nl          #
+#    Updated: 2019/11/05 16:15:56 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME): $(OFILES)
 	@echo "Done"
 
 %.o: %.c
-	@echo "\e[1mCompiling: $<"
+	@echo "Compiling: $<"
 	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
 clean: _clean
