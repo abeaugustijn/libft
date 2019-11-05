@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/05 11:20:52 by aaugusti      ########   odam.nl          #
+#    Updated: 2019/11/05 14:33:20 by aaugusti      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME): $(OFILES)
 	@echo "Done"
 
 %.o: %.c
-	@echo "Compiling: $<"
+	@echo "\e[1mCompiling: $<"
 	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
 clean: _clean
@@ -50,7 +50,7 @@ fclean: _clean
 _clean:
 	@rm -f $(OFILES) $(BONUS_OFILES)
 
-re: fclean all 
+re: fclean all
 
 bonus: $(OFILES) $(BONUS_OFILES) $(NAME)
 	@echo "Linking bonus lib"

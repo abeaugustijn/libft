@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:14:37 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:40:17 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/05 14:26:39 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,13 @@ void		ft_putnbr_fd(int n, int fd)
 		*res = '-';
 		n *= -1;
 	}
-	i = -1;
+	i = 0;
 	res[n_len] = '\0';
-	while (++i < n_len - is_neg)
+	while (i < n_len - is_neg)
 	{
 		res[n_len - 1 - i] = (char)(n % 10 + '0');
 		n /= 10;
+		i++;
 	}
 	ft_putstr_fd(res, fd);
 }
