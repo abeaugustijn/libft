@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/05 11:21:18 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/07 20:43:50 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
+
+typedef char	t_bool;
+
+# ifndef FALSE
+#  define FALSE 0
+# endif
+# ifndef TRUE
+#  define TRUE 1
+# endif
 
 typedef struct	s_list
 {
@@ -69,5 +78,6 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 				void (*del)(void *));
 int				ft_lstcount_condition(t_list *lst, int (*f)(void *));
+char			*ft_itoa_base(int n, int base);
 
 #endif
