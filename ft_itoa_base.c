@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 20:31:49 by abe               #+#    #+#             */
-/*   Updated: 2019/11/07 20:55:36 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/08 10:22:50 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,32 @@ int		number_len(int n, int base)
 	int		res;
 
 	res = 0;
+	if (n < 0)
+		n *= -1;
 	while (n > 0)
 	{
 		res++;
 		n /= base;
 	}
 	return (res);
+}
+
+void	check_neg(int *n, t_bool *is_neg)
+{
+	if (*n < 0)
+	{
+		*is_neg = TRUE;
+		*n *= -1;
+	}
+}
+
+char	*exceptions(int n, int base)
+{
+	if (base < 2 || base > 36)
+		return (NULL);
+	if (n == 0)
+		return (ft_strdup("0"));
+	return ((char *)1);
 }
 
 char	*ft_itoa_base(int n, int base)
@@ -34,14 +54,12 @@ char	*ft_itoa_base(int n, int base)
 	char	*res;
 	int		i;
 
-	bases = "0123456789ABCDEF";
+	bases = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	is_neg = FALSE;
+	if (exceptions(n, base) != (char *)1)
+		return (exceptions(n, base));
 	n_len = number_len(n, base);
-	if (n < 0)
-	{
-		is_neg = TRUE;
-		n *= -1;
-	}
+	check_neg(&n, &is_neg);
 	res = (char *)malloc((size_t)(n_len + is_neg));
 	if (is_neg)
 		res[0] = '-';
