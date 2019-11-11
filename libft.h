@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/07 20:43:50 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/11 09:54:55 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 				void (*del)(void *));
 int				ft_lstcount_condition(t_list *lst, int (*f)(void *));
 char			*ft_itoa_base(int n, int base);
+char			*ft_strdup_c(const char *s1, char c);
 
 #endif

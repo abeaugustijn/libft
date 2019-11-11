@@ -6,7 +6,7 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:11:29 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:41:12 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/11 10:08:36 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 1;
 	if (n <= 0)
-		return (-1);
+		return (0);
 	while (*s1 == *s2 && i < n && *s1 && *s2)
 	{
 		s1++;

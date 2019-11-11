@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:42:46 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/11 10:03:35 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,62 +14,79 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static void	del(void *content)
+static char		**remove_list(char **list, int n)
 {
-	free(content);
+	while (*list && n >= 0)
+	{
+		free(*list);
+		(*list) += sizeof(char *);
+		n--;
+	}
+	return (NULL);
 }
 
-static char	**list_to_array(t_list *head)
+static size_t	get_size(char const *s, char c)
 {
-	char	**res;
-	size_t	list_len;
-	int		i;
-	t_list	*list;
+	char	prev;
+	size_t	res;
 
-	list = head;
-	list_len = (size_t)ft_lstsize(head);
-	res = (char **)malloc(sizeof(char *) * (list_len + 1));
-	if (res == NULL)
-		return (NULL);
-	i = 0;
-	while (head)
+	prev = 0;
+	res = 0;
+	while (*s)
 	{
-		res[i] = (char *)malloc(ft_strlen(head->content));
-		if (res[i] == NULL)
-			return (NULL);
-		ft_strlcpy(res[i], head->content, ft_strlen(head->content) + 1);
-		head = head->next;
-		i++;
+		if (*s != c && prev == c)
+			res++;
+		prev = *s;
+		s++;
 	}
-	res[i] = NULL;
-	ft_lstclear(&list, del);
 	return (res);
 }
 
-char		**ft_split(char const *s, char c)
+static char		**get_mem(size_t arr_size)
 {
-	char	*b;
-	t_list	*res;
+	char	**res;
+
+	res = (char **)malloc((arr_size + 1) * sizeof(char *));
+	if (res == NULL)
+		return (NULL);
+	res[arr_size] = NULL;
+	return (res);
+}
+
+int				skip_the_shit(char **s, char c)
+{
+	while (**s == c)
+		(*s)++;
+	if (!**s)
+		return (1);
+	return (0);
+}
+
+char			**ft_split(char const *s, char c)
+{
 	char	*to_add_str;
 	size_t	to_add_len;
+	int		i;
+	char	**res;
 
 	if (s == NULL)
 		return (NULL);
-	b = (char*)s;
-	res = NULL;
-	while (*b)
+	res = get_mem(get_size(s, c));
+	if (res == NULL)
+		return (NULL);
+	i = 0;
+	while (*s)
 	{
-		while (*b == c)
-			b++;
-		if (*b == 0)
+		if (skip_the_shit((char **)&s, c))
 			break ;
-		to_add_len = ft_strlen_c(b, c);
+		to_add_len = ft_strlen_c((char *)s, c);
 		to_add_str = (char *)malloc(to_add_len + 1);
 		if (to_add_str == NULL)
-			return (NULL);
-		ft_strlcpy(to_add_str, (const char *)b, to_add_len + 1);
-		ft_lstadd_back(&res, ft_lstnew(to_add_str));
-		b += to_add_len;
+			return (remove_list(res, i - 1));
+		to_add_str = ft_strdup_c((const char *)s, c);
+		res[i] = to_add_str;
+		s += to_add_len;
+		i++;
 	}
-	return (list_to_array(res));
+	return (res);
 }
