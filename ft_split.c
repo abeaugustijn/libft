@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/11 10:03:35 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/11 10:25:34 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char		**get_mem(size_t arr_size)
 	return (res);
 }
 
-int				skip_the_shit(char **s, char c)
+static int		skip_the_shit(char **s, char c)
 {
 	while (**s == c)
 		(*s)++;
