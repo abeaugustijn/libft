@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/12 10:29:10 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/12 11:51:59 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ $(NAME): $(OFILES)
 	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
 clean: _clean
+	@rm -f bonus
 	@echo "Cleaning..."
 
 fclean: _clean
@@ -60,4 +61,5 @@ re: fclean all
 bonus: $(OFILES) $(BONUS_OFILES) $(NAME)
 	@echo "Linking bonus lib"
 	@$(AR_COMMAND) $(NAME) $(OFILES) $(BONUS_OFILES)
+	@touch bonus
 	@echo "Bonus done"
