@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/12 20:11:42 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/15 14:31:45 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 				void (*del)(void *));
 int				ft_lstcount_condition(t_list *lst, int (*f)(void *));
-char			*ft_itoa_base(int n, int base);
+char			*ft_itoa_base(long long n, int base);
 char			*ft_strdup_c(const char *s1, char c);
 char			*ft_strldup(const char *src, size_t n);
 size_t			ft_intlen(int n);

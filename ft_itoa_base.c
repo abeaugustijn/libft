@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 20:31:49 by abe               #+#    #+#             */
-/*   Updated: 2019/11/08 10:22:50 by aaugusti         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_itoa_base.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2019/11/07 20:31:49 by abe            #+#    #+#                */
+/*   Updated: 2019/11/15 14:30:19 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		number_len(int n, int base)
 	return (res);
 }
 
-void	check_neg(int *n, t_bool *is_neg)
+void	check_neg(long long *n, t_bool *is_neg)
 {
 	if (*n < 0)
 	{
@@ -37,7 +37,7 @@ void	check_neg(int *n, t_bool *is_neg)
 	}
 }
 
-char	*exceptions(int n, int base)
+char	*exceptions(long long n, int base)
 {
 	if (base < 2 || base > 36)
 		return (NULL);
@@ -46,7 +46,7 @@ char	*exceptions(int n, int base)
 	return ((char *)1);
 }
 
-char	*ft_itoa_base(int n, int base)
+char	*ft_itoa_base(long long n, int base)
 {
 	char	*bases;
 	int		n_len;
