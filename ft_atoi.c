@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:45:05 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:37:50 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/15 14:20:18 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	skip_ws(char **str)
+static int	skip_ws(char **str, long int *is_neg)
 {
-	while (**str == '\t' || **str == '\n' || **str == ' ' || **str == '\r' ||
-			**str == '\f' || **str == '\v')
+	int	has_plus;
+
+	has_plus = 0;
+	while ((**str == '\t' || **str == '\n' || **str == ' ' || **str == '\r' ||
+			**str == '\f' || **str == '\v') && **str)
 		(*str)++;
 	if (**str == '+')
+	{
 		(*str)++;
+		has_plus = 1;
+	}
+	if (**str == '-')
+	{
+		if (has_plus)
+			return (1);
+		*is_neg = -1;
+		(*str)++;
+	}
+	return (0);
 }
 
 int			ft_atoi(const char *str)
@@ -27,13 +41,9 @@ int			ft_atoi(const char *str)
 	unsigned long int	res;
 	unsigned long int	prev_res;
 
-	skip_ws((char **)&str);
 	is_neg = 1;
-	if (*str == '-')
-	{
-		is_neg = -1;
-		str++;
-	}
+	if (skip_ws((char **)&str, &is_neg))
+		return (0);
 	res = 0;
 	while (*str)
 	{

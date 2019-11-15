@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:54:19 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:43:20 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/15 14:07:20 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ char		*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	b = (char*)s1;
 	e = (char*)s1 + ft_strlen(s1) - 1;
-	while (in_set(set, *b))
+	while (in_set(set, *b) && *b)
 		b++;
-	while (in_set(set, *e))
+	while (in_set(set, *e) && e >= s1)
 		e--;
 	e++;
 	res = (char*)malloc((b >= e) ? 1 : (e - b + 1));
