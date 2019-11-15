@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/15 14:31:45 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/15 15:42:40 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ char			*ft_itoa_base(long long n, int base);
 char			*ft_strdup_c(const char *s1, char c);
 char			*ft_strldup(const char *src, size_t n);
 size_t			ft_intlen(int n);
+void			ft_putstr_n_fd(char *s, size_t n, int fd);
 
 #endif

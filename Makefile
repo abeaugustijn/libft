@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                      +:+                     #
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/15 14:27:37 by aaugusti      ########   odam.nl          #
+#    Updated: 2019/11/15 15:42:30 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS			=	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
 	ft_itoa ft_putchar_fd ft_putendl_fd ft_putstr_fd ft_putnbr_fd ft_cchr\
 	ft_split ft_strjoin ft_strmapi ft_strtrim ft_substr ft_strdup ft_strlen_c\
 	ft_lstprint ft_lstcount_condition ft_strdup_c ft_strldup ft_intlen\
-	ft_itoa_base
+	ft_itoa_base ft_putstr_n_fd
 
 BONUS_SRCS		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone\
 	ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
