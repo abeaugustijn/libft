@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/15 20:41:22 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/16 11:08:35 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct	s_list
 */
 
 int					ft_atoi(const char *str);
+unsigned int		ft_atoi_ui(const char *str);
 unsigned long		ft_atoi_ul(const char *str);
 unsigned long long	ft_atoi_ull(const char *str);
 
