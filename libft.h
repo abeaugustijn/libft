@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/16 11:08:35 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/18 10:05:08 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <stddef.h>
 
-typedef char	t_bool;
+typedef char		t_bool;
 
 # ifndef FALSE
 #  define FALSE 0
@@ -23,12 +23,11 @@ typedef char	t_bool;
 #  define TRUE 1
 # endif
 
-typedef struct	s_list
+typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
-}				t_list;
-
+}					t_list;
 
 /*
 **	atoi functions
@@ -39,14 +38,12 @@ unsigned int		ft_atoi_ui(const char *str);
 unsigned long		ft_atoi_ul(const char *str);
 unsigned long long	ft_atoi_ull(const char *str);
 
-
 /*
 ** itoa functions
 */
 
-char			*ft_itoa(int n);
-char			*ft_itoa_base(long long n, int base);
-
+char				*ft_itoa(int n);
+char				*ft_itoa_base(long long n, int base);
 
 /*
 **	char functions
@@ -59,7 +56,6 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-
 
 /*
 **	string functions
@@ -85,7 +81,6 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strdup_c(const char *s1, char c);
 char				*ft_strldup(const char *src, size_t n);
 
-
 /*
 **	memory functions
 */
@@ -99,7 +94,6 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_calloc(size_t count, size_t size);
 void				ft_bzero(void *s, size_t n);
 
-
 /*
 **	output functions
 */
@@ -109,7 +103,6 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_n_fd(char *s, size_t n, int fd);
-
 
 /*
 **	list functions
@@ -127,7 +120,6 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 int					ft_lstcount_condition(t_list *lst, int (*f)(void *));
-
 
 /*
 **	misc

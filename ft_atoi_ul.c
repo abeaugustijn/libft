@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 19:56:32 by abe               #+#    #+#             */
-/*   Updated: 2019/11/15 20:30:25 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/18 10:04:07 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ static void		skip_ws(char **str)
 
 unsigned long	ft_atoi_ul(const char *str)
 {
-	unsigned long 	res;
-	unsigned long 	prev_res;
+	unsigned long	res;
+	unsigned long	prev_res;
 
 	skip_ws((char **)&str);
 	res = 0;
