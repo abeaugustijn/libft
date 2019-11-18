@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:01:59 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:40:41 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/18 10:32:50 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (res == NULL)
 		return (NULL);
 	ft_strlcpy(res, s1, s1_len + 1);
-	ft_strlcat(res, s2, s1_len + s2_len + 1);
+	ft_strlcat(res, s2, tot_len + 1);
 	return (res);
 }
