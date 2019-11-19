@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:08:08 by abe               #+#    #+#             */
-/*   Updated: 2019/11/19 13:28:27 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/19 13:29:44 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_intlen(long long int n)
 
 	if (n == -2147483648)
 		return (11);
-	if (res == 0)
+	if (n == 0)
 		return (1);
 	res = 0;
 	if (n < 0)
