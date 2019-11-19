@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/19 21:45:15 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/19 22:03:30 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static size_t	get_size(char const *s, char c)
 	char	prev;
 	size_t	res;
 
+	if (c == '\0')
+		return (1);
 	prev = 0;
 	res = 0;
 	if (*s != c && *s)
@@ -77,6 +79,8 @@ char			**ft_split(char const *s, char c)
 	res = get_mem(get_size(s, c));
 	if (res == NULL)
 		return (NULL);
+	if (*s == '\0')
+		res[0] = ft_strdup("");
 	i = 0;
 	while (*s)
 	{
