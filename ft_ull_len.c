@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:34:04 by abe               #+#    #+#             */
-/*   Updated: 2019/11/18 20:04:39 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/19 13:28:44 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_ull_len(unsigned long long n)
 {
 	int	res;
 
+	if (n == 0)
+		return (1);
 	res = 0;
 	while (n > 0)
 	{
