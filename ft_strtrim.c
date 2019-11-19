@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:54:19 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/18 16:28:22 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/19 21:16:16 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	b = (char*)s1;
 	e = (char*)s1 + ft_strlen(s1) - 1;
+	if (e < b)
+		return (NULL);
 	while (ft_inset(set, *b) && *b)
 		b++;
 	while (ft_inset(set, *e) && e > s1)
