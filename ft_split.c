@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/18 10:16:58 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/19 21:45:15 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,9 @@ char			**ft_split(char const *s, char c)
 		if (skip_the_shit((char **)&s, c))
 			break ;
 		to_add_len = ft_strlen_c((char *)s, c);
-		to_add_str = (char *)malloc(to_add_len + 1);
+		to_add_str = ft_strdup_c((const char *)s, c);
 		if (to_add_str == NULL)
 			return (remove_list(res, i - 1));
-		to_add_str = ft_strdup_c((const char *)s, c);
 		res[i] = to_add_str;
 		s += to_add_len;
 		i++;
