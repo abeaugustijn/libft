@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/19 22:03:30 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/19 22:31:56 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	get_size(char const *s, char c)
 	char	prev;
 	size_t	res;
 
-	if (c == '\0')
+	if (c == '\0' || *s == '\0')
 		return (1);
 	prev = 0;
 	res = 0;
