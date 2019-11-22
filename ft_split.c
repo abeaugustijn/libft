@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/19 22:31:56 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/22 12:03:10 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ static int		skip_the_shit(char **s, char c)
 
 char			**ft_split(char const *s, char c)
 {
-	char	*to_add_str;
 	size_t	to_add_len;
 	int		i;
 	char	**res;
@@ -87,10 +86,9 @@ char			**ft_split(char const *s, char c)
 		if (skip_the_shit((char **)&s, c))
 			break ;
 		to_add_len = ft_strlen_c((char *)s, c);
-		to_add_str = ft_strdup_c((const char *)s, c);
-		if (to_add_str == NULL)
+		res[i] = ft_strdup_c((const char *)s, c);
+		if (res[i] == NULL)
 			return (remove_list(res, i - 1));
-		res[i] = to_add_str;
 		s += to_add_len;
 		i++;
 	}
