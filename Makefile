@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/18 20:08:33 by abe              ###   ########.fr        #
+#    Updated: 2019/11/22 15:16:23 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS			=	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
 	ft_split ft_strjoin ft_strmapi ft_strtrim ft_substr ft_strdup ft_strlen_c\
 	ft_lstprint ft_lstcount_condition ft_strdup_c ft_strldup ft_intlen\
 	ft_itoa_base ft_putstr_n_fd ft_atoi_ul ft_atoi_ull ft_atoi_ui ft_inset\
-	ft_ull_len
+	ft_ull_len ft_puthex_fd
 
 BONUS_SRCS		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone\
 	ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
