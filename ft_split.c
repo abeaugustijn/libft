@@ -6,13 +6,13 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/22 12:03:10 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/25 14:04:15 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 #include <stdlib.h>
+#include <stddef.h>
 
 static char		**remove_list(char **list, int n)
 {
@@ -32,7 +32,7 @@ static size_t	get_size(char const *s, char c)
 	size_t	res;
 
 	if (c == '\0' || *s == '\0')
-		return (1);
+		return (0);
 	prev = 0;
 	res = 0;
 	if (*s != c && *s)
@@ -79,7 +79,7 @@ char			**ft_split(char const *s, char c)
 	if (res == NULL)
 		return (NULL);
 	if (*s == '\0')
-		res[0] = ft_strdup("");
+		return (res);
 	i = 0;
 	while (*s)
 	{

@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 11:47:31 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/22 10:50:19 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/25 14:10:19 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,11 @@ static int	ft_numlen(int n)
 	return (res);
 }
 
-static char	*exception(int n, char *old)
+static char	*exception(int n)
 {
 	char	*res;
 	size_t	mem_size;
 
-	if (old)
-		free(old);
 	if (n == 0)
 		mem_size = 2;
 	else
@@ -75,11 +73,11 @@ char		*ft_itoa(int n)
 
 	is_neg = n < 0;
 	n_len = ft_numlen(n);
+	if (n == -2147483648 || n == 0)
+		return (exception(n));
 	res = gimme_mem((size_t)n_len + 1);
 	if (res == NULL)
 		return (NULL);
-	if (n == -2147483648 || n == 0)
-		return (exception(n, res));
 	if (is_neg)
 	{
 		*res = '-';
