@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/25 15:31:39 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/25 15:36:44 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,6 @@ int					ft_lstcount_condition(t_list *lst, int (*f)(void *));
 
 size_t				ft_intlen(long long int n);
 size_t				ft_ull_len(unsigned long long n);
-size_t				ft_hexlen(unsigned long long n)
+size_t				ft_hexlen(unsigned long long n);
 
 #endif
