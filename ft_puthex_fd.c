@@ -6,7 +6,7 @@
 /*   By: aaugusti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:24:10 by aaugusti          #+#    #+#             */
-/*   Updated: 2019/11/25 15:34:00 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/25 15:37:33 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void		ft_puthex_fd(unsigned long long n, int fd, int cap)
 {
 	size_t	n_len;
 	char	res[17];
-	int		i;
+	size_t	i;
 	char	*bases;
 
 	bases = cap ? "0123456789ABCDEF" : "0123456789abcdef";
