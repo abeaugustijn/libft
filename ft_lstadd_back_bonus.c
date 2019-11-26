@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:05:19 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:38:47 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/26 15:52:53 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,5 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 		last->next = new;
 	}
 	else
-	{
 		*alst = new;
-	}
 }

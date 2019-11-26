@@ -6,9 +6,13 @@
 /*   By: aaugusti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:27:54 by aaugusti          #+#    #+#             */
-/*   Updated: 2019/11/18 16:28:27 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/26 15:51:06 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	Check whether c is in set
+*/
 
 int	ft_inset(const char *set, char c)
 {

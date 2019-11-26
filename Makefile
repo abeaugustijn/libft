@@ -6,30 +6,77 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/25 15:40:37 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/26 16:30:11 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libft.a
 
-SRCS			=	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
-	ft_isdigit ft_isprint ft_memccpy ft_memchr ft_memcmp ft_memcpy\
-	ft_memmove ft_memset ft_strchr ft_strlcat ft_strlcpy ft_strlen\
-	ft_strncmp ft_strnstr ft_strrchr ft_tolower ft_toupper ft_calloc\
-	ft_itoa ft_putchar_fd ft_putendl_fd ft_putstr_fd ft_putnbr_fd ft_cchr\
-	ft_split ft_strjoin ft_strmapi ft_strtrim ft_substr ft_strdup ft_strlen_c\
-	ft_lstprint ft_lstcount_condition ft_strdup_c ft_strldup ft_intlen\
-	ft_itoa_base ft_putstr_n_fd ft_atoi_ul ft_atoi_ull ft_atoi_ui ft_inset\
-	ft_ull_len ft_puthex_fd ft_hexlen
+SRCS			=	atoi\
+					bzero\
+					isalnum\
+					isalpha\
+					isascii\
+					isdigit\
+					isprint\
+					memccpy\
+					memchr\
+					memcmp\
+					memcpy\
+					memmove\
+					memset\
+					strchr\
+					strlcat\
+					strlcpy\
+					strlen\
+					strncmp\
+					strnstr\
+					strrchr\
+					tolower\
+					toupper\
+					calloc\
+					itoa\
+					putchar_fd\
+					putendl_fd\
+					putstr_fd\
+					putnbr_fd\
+					split\
+					strjoin\
+					strmapi\
+					strtrim\
+					substr\
+					strdup
 
-BONUS_SRCS		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone\
-	ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
+BONUS_SRCS		=	lstadd_back\
+					lstadd_front\
+					lstclear\
+					lstdelone\
+					lstiter\
+					lstlast\
+					lstnew\
+					lstsize\
+					lstprint\
+					lstcount_condition\
+					cchr\
+					strlen_c\
+					strdup_c\
+					strldup\
+					intlen\
+					itoa_base\
+					putstr_n_fd\
+					atoi_ul\
+					atoi_ull\
+					atoi_ui\
+					inset\
+					ull_len\
+					puthex_fd\
+					hexlen
 
-CFILES			=	$(SRCS:%=%.c)
-OFILES			=	$(SRCS:%=%.o)
+CFILES			=	$(SRCS:%=ft_%.c)
+OFILES			=	$(SRCS:%=ft_%.o)
 
-BONUS_CFILES	=	$(BONUS_SRCS:%=%_bonus.c)
-BONUS_OFILES	=	$(BONUS_SRCS:%=%_bonus.o)
+BONUS_CFILES	=	$(BONUS_SRCS:%=ft_%_bonus.c)
+BONUS_OFILES	=	$(BONUS_SRCS:%=ft_%_bonus.o)
 
 INCLUDES		=	./includes
 FLAGS			=	-Wall -Werror -Wextra
@@ -45,7 +92,7 @@ $(NAME): $(OFILES)
 
 %.o: %.c
 	@echo "Compiling: $<"
-	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
+	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES) -g
 
 clean: _clean
 	@rm -f bonus
