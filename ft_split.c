@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/25 14:04:15 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/26 14:42:55 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ static char		**remove_list(char **list, int n)
 {
 	while (*list && n >= 0)
 	{
-		free(*list);
-		(*list) += sizeof(char *);
+		free(list[n]);
 		n--;
 	}
 	free(list);
