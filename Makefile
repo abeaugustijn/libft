@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/28 18:25:36 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/28 23:49:53 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,20 +82,20 @@ AR_COMMAND		= ar rs
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	@echo "Linking lib"
+	@echo "🔗 Linking lib"
 	@$(AR_COMMAND) $(NAME) $(OFILES)
-	@echo "Done"
+	@echo "✅ Done"
 
 %.o: %.c
-	@echo "Compiling: $<"
+	@echo "👾 Compiling: $<"
 	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES) -g
 
 clean: _clean
 	@rm -f bonus
-	@echo "Cleaning..."
+	@echo "🧽 Cleaning..."
 
 fclean: _clean
-	@echo "Fucking cleaning..."
+	@echo "🛀 Cleaning..."
 	@rm -f $(NAME)
 
 _clean:
@@ -104,7 +104,7 @@ _clean:
 re: fclean all
 
 bonus: $(OFILES) $(BONUS_OFILES) $(NAME)
-	@echo "Linking bonus lib"
+	@echo "🅱️ Linking bonus lib"
 	@$(AR_COMMAND) $(NAME) $(OFILES) $(BONUS_OFILES)
 	@touch bonus
-	@echo "Bonus done"
+	@echo "❗️ Bonus done"
