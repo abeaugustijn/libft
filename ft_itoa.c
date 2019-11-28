@@ -6,27 +6,28 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 11:47:31 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/25 14:10:19 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/28 12:58:05 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 #include <stdlib.h>
+#include <limits.h>
 
-static int	ft_numlen(int n)
+/*
+**	Get the amount of bytes needed to store the result of itoa.
+*/
+
+static int	ft_itoa_numlen(int n)
 {
 	int	res;
 
 	res = 0;
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (11);
 	if (n < 0)
 	{
-		res++;
 		n *= -1;
+		res++;
 	}
 	while (n > 0)
 	{
@@ -36,16 +37,17 @@ static int	ft_numlen(int n)
 	return (res);
 }
 
-static char	*exception(int n)
+/*
+**	Check for the two edgecases and handle those.
+*/
+
+static char	*ft_itoa_exception(int n)
 {
 	char	*res;
-	size_t	mem_size;
 
-	if (n == 0)
-		mem_size = 2;
-	else
-		mem_size = 13;
-	res = (char *)malloc(mem_size);
+	res = (char *)malloc(n == 0 ? 2 : 13);
+	if (res == NULL)
+		return (NULL);
 	if (n == 0)
 		ft_strlcpy(res, "0", 2);
 	else
@@ -53,7 +55,12 @@ static char	*exception(int n)
 	return (res);
 }
 
-static char	*gimme_mem(size_t len)
+/*
+**	Allocate the right amount of memory for the result string and zero-temrinate
+**	the string.
+*/
+
+static char	*ft_itoa_get_mem(size_t len)
 {
 	char	*res;
 
@@ -64,6 +71,10 @@ static char	*gimme_mem(size_t len)
 	return (res);
 }
 
+/*
+**	Convert an integer into a string. Returns NULL if the allocation failed.
+*/
+
 char		*ft_itoa(int n)
 {
 	int		n_len;
@@ -72,10 +83,10 @@ char		*ft_itoa(int n)
 	int		i;
 
 	is_neg = n < 0;
-	n_len = ft_numlen(n);
-	if (n == -2147483648 || n == 0)
-		return (exception(n));
-	res = gimme_mem((size_t)n_len + 1);
+	n_len = ft_itoa_numlen(n);
+	if (n == INT_MIN || n == 0)
+		return (ft_itoa_exception(n));
+	res = ft_itoa_get_mem((size_t)n_len + 1);
 	if (res == NULL)
 		return (NULL);
 	if (is_neg)

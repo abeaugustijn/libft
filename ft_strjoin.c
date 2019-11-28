@@ -6,12 +6,18 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:01:59 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/18 10:32:50 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/28 18:59:48 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+/*
+**	Join two strings together. The result will be a newly-allocated string which
+**	is alway null-terminated. When the allocation fails, NULL is returned. The
+**	function returns if one of both parameters is NULL.
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -5,13 +5,21 @@
 /*                                                     +:+                    */
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 20:35:36 by abe            #+#    #+#                */
-/*   Updated: 2019/11/04 19:39:43 by abe              ###   ########.fr       */
+/*   Created: 2019/10/28 20:35:36 by aaugusti       #+#    #+#                */
+/*   Updated: 2019/11/28 13:06:27 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
+
+/*
+**	Compare the byte strings 's1' to 's2'. No more than 'n' bytes are checked.
+**	If a difference is found the difference between the bytes at which the
+**	difference occured is returned. (*s1 - *s2). Both bytestrings are inter-
+**	preted as unsigned char strings. If no difference in the first n bytes is
+**	found, 0 is returned.
+*/
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {

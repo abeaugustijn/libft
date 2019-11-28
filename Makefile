@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/26 16:30:11 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/28 18:25:36 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,20 +55,16 @@ BONUS_SRCS		=	lstadd_back\
 					lstlast\
 					lstnew\
 					lstsize\
-					lstprint\
 					lstcount_condition\
 					cchr\
 					strlen_c\
 					strdup_c\
 					strldup\
 					intlen\
-					itoa_base\
 					putstr_n_fd\
 					atoi_ul\
 					atoi_ull\
 					atoi_ui\
-					inset\
-					ull_len\
 					puthex_fd\
 					hexlen
 

@@ -6,7 +6,7 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 20:25:07 by abe            #+#    #+#                */
-/*   Updated: 2019/11/04 19:39:39 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/28 12:53:24 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
-	char	*s_cpy;
 
 	i = 0;
-	s_cpy = (char*)s;
 	while (i < n)
 	{
-		if (((unsigned char*)s)[i] == (unsigned char)c)
-			return (s_cpy + i);
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((unsigned char *)s + i);
 		i++;
 	}
 	return (NULL);

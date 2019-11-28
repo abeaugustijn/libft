@@ -6,68 +6,35 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:14:37 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/12 20:26:05 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/28 13:43:44 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <limits.h>
 
-static int	ft_numlen(int n)
-{
-	int	res;
-
-	res = 0;
-	if (n == 0)
-		return (1);
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
-	{
-		res++;
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		n /= 10;
-		res++;
-	}
-	return (res);
-}
-
-static void	exception(int n, int fd)
-{
-	if (n == 0)
-		ft_putstr_fd("0", fd);
-	else
-		ft_putstr_fd("-2147483648", fd);
-}
+/*
+**	Output the integer 'n' to 'fd'.
+*/
 
 void		ft_putnbr_fd(int n, int fd)
 {
-	int		n_len;
-	int		is_neg;
-	char	res[14];
-	int		i;
-
-	is_neg = n < 0;
-	n_len = ft_numlen(n);
-	if (n == -2147483648 || n == 0)
-		exception(n, fd);
-	if (n == -2147483648 || n == 0)
-		return ;
-	if (is_neg)
+	if (n == INT_MIN)
 	{
-		*res = '-';
+		ft_putnbr_fd(-2, fd);
+		ft_putnbr_fd(147483648, fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
-	i = 0;
-	res[n_len] = '\0';
-	while (i < n_len - is_neg)
+	if (n < 10)
+		ft_putchar_fd((char)(n + '0'), fd);
+	else
 	{
-		res[n_len - 1 - i] = (char)(n % 10 + '0');
-		n /= 10;
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((char)((n % 10) + '0'), fd);
 	}
-	ft_putstr_fd(res, fd);
 }

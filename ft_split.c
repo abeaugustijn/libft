@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/26 14:42:55 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/28 18:23:34 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,86 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-static char		**remove_list(char **list, int n)
+/*
+**	Copy the string to be added to the result and return the pointer to the
+**	freshly allocated string. Returns NULL if allocation fails. The amount of
+**	chars in the returned string is stored in to_add_len.
+*/
+
+char	*ft_split_create_string(char const *s, char c, size_t *to_add_len)
+{
+	char	*res;
+	size_t	n;
+
+	n = 0;
+	while (s[n] && s[n] != c)
+		n++;
+	res = (char *)malloc(n + 1);
+	if (res == NULL)
+		return (NULL);
+	*to_add_len = n;
+	res[n] = '\0';
+	while (n > 0)
+	{
+		res[n - 1] = s[n - 1];
+		n--;
+	}
+	return (res);
+}
+
+/*
+**	Get the pointer to the allocated memory with the right size for the final
+**	result. To do this, first the mount of strings in the final array are
+**	counted.
+*/
+
+static char		**ft_split_get_mem(char const *s, char c)
+{
+	char	**res;
+	char	prev;
+	size_t	arr_size;
+
+	arr_size = 0;
+	if (c == '\0')
+		arr_size++;
+	if (c != '\0' && *s != '\0')
+	{
+		prev = 0;
+		if (*s != c && *s)
+			arr_size++;
+		while (*s)
+		{
+			if (*s != c && prev == c)
+				arr_size++;
+			prev = *s;
+			s++;
+		}
+	}
+	res = (char **)malloc((arr_size + 1) * sizeof(char *));
+	if (res == NULL)
+		return (NULL);
+	res[arr_size] = NULL;
+	return (res);
+}
+
+/*
+**	Skip all of the occurences of 'c' in 's'.
+*/
+
+static int		ft_split_skip_c(char **s, char c)
+{
+	while (**s == c)
+		(*s)++;
+	if (!**s)
+		return (1);
+	return (0);
+}
+
+/*
+**	Clear the list in case of a failed allocation to prevent leaks.
+*/
+
+static char		**ft_split_remove_list(char **list, int n)
 {
 	while (*list && n >= 0)
 	{
@@ -25,46 +104,12 @@ static char		**remove_list(char **list, int n)
 	return (NULL);
 }
 
-static size_t	get_size(char const *s, char c)
-{
-	char	prev;
-	size_t	res;
-
-	if (c == '\0' || *s == '\0')
-		return (0);
-	prev = 0;
-	res = 0;
-	if (*s != c && *s)
-		res++;
-	while (*s)
-	{
-		if (*s != c && prev == c)
-			res++;
-		prev = *s;
-		s++;
-	}
-	return (res);
-}
-
-static char		**get_mem(size_t arr_size)
-{
-	char	**res;
-
-	res = (char **)malloc((arr_size + 1) * sizeof(char *));
-	if (res == NULL)
-		return (NULL);
-	res[arr_size] = NULL;
-	return (res);
-}
-
-static int		skip_the_shit(char **s, char c)
-{
-	while (**s == c)
-		(*s)++;
-	if (!**s)
-		return (1);
-	return (0);
-}
+/*
+**	Split the string 's' into new strings delimited by 'c'-chars. Multiple
+**	occurences of c after each other will be interpreted as a single split
+**	point. Returns an array of strings if everything went well. Returns NULL
+**	if any allocation fails. The result is always NULL-terminated.
+*/
 
 char			**ft_split(char const *s, char c)
 {
@@ -74,7 +119,7 @@ char			**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	res = get_mem(get_size(s, c));
+	res = ft_split_get_mem(s, c);
 	if (res == NULL)
 		return (NULL);
 	if (*s == '\0')
@@ -82,12 +127,11 @@ char			**ft_split(char const *s, char c)
 	i = 0;
 	while (*s)
 	{
-		if (skip_the_shit((char **)&s, c))
+		if (ft_split_skip_c((char **)&s, c))
 			break ;
-		to_add_len = ft_strlen_c((char *)s, c);
-		res[i] = ft_strdup_c((const char *)s, c);
+		res[i] = ft_split_create_string(s, c, &to_add_len);
 		if (res[i] == NULL)
-			return (remove_list(res, i - 1));
+			return (ft_split_remove_list(res, i - 1));
 		s += to_add_len;
 		i++;
 	}

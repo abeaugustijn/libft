@@ -6,13 +6,20 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:45:35 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:41:06 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/28 19:40:12 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 #include <stdlib.h>
+
+/*
+**	Create a new string based on 's'. Every char in 's' is passed through the
+**	function 'f' and the return-value is used to build the new string. Al-
+**	ways null-terminates the result string. Returns NULL if the allocation fails
+**	or when 's' or 'f' are null.
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

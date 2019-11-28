@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
+/*   ft_puthex_fd_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaugusti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:24:10 by aaugusti          #+#    #+#             */
-/*   Updated: 2019/11/25 15:37:33 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/28 13:28:22 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <limits.h>
+
+/*
+**	Write the hexadecimal representation of 'n' to 'fd'. 'cap' is there to de-
+**	fine whether the printed alphabetical chars should be capitalized or not.
+*/
 
 void		ft_puthex_fd(unsigned long long n, int fd, int cap)
 {

@@ -6,12 +6,18 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:24:02 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/19 10:17:31 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/28 19:02:24 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
+
+/*
+**	Concatenate 'src' with 'dst'. The total length of 'dst' will be at most
+**	'dstsize' (including the null-byte). 'dst' will be always be null-
+**	terminated. The length of the string it tried to create will be returned.
+*/
 
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

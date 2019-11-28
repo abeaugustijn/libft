@@ -6,12 +6,18 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:11:29 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/11 10:08:36 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/28 19:41:35 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
+
+/*
+**	Compare at most 'n' bytes of 's1' and 's2'. If a difference is encountered
+**	the difference between the two chars is returned (s1 - s2). If no difference
+**	is found, 0 is returned.
+*/
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {

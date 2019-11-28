@@ -6,11 +6,15 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:08:31 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/04 19:40:14 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/28 13:26:21 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+**	Write the string 's' and a newline char to 'fd'.
+*/
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -6,27 +6,28 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 19:45:39 by abe            #+#    #+#                */
-/*   Updated: 2019/11/04 19:39:49 by abe              ###   ########.fr       */
+/*   Updated: 2019/11/28 13:20:17 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
+/*
+**	Copy n bytes from stc to dest. The behaviour is undefined if src and
+**	dest overlap or if one of both is NULL. Use memmove for safe copying of
+**	overlapping sections of memory. Returns dest. If dest or src are NULL,
+**	NULL is returned.
+*/
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
-	char			*d;
-	const char		*s;
+	size_t	i;
 
-	d = (char *)dest;
-	s = (const char *)src;
 	i = 0;
-	if (dest == NULL && src == NULL)
-		return (NULL);
 	while (i < n)
 	{
-		d[i] = s[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dest);

@@ -6,13 +6,20 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:45:05 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/15 14:20:18 by aaugusti      ########   odam.nl         */
+/*   Updated: 2019/11/28 11:23:26 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	skip_ws(char **str, long int *is_neg)
+/*
+**	Function to handle the whitespaces, '+' and '-' chars at the start of a 
+**	atoi string. A pointer to the string and a pointer to a t_bool is given to
+**	store the 'is_neg' value is given. 
+**	Returns 0 if the string is valid so far, 1 if this is not the case.
+*/
+
+static t_bool	ft_atoi_skip_ws(char **str, t_bool *is_neg)
 {
 	int	has_plus;
 
@@ -35,14 +42,27 @@ static int	skip_ws(char **str, long int *is_neg)
 	return (0);
 }
 
-int			ft_atoi(const char *str)
+/*
+**	Convert ASCII string to integer
+**		_a copy of the libc function_
+**
+**	Integer overflow is 'allowed'. The function does the conversion to a un-
+**	signed long and casts it back when returning. When the long overflows the
+**	function returns -1 if the value was negative and 0 if it was not.
+**
+**	All whitespaces at the beginning of the string are skipped and there is a
+**	single sign allowed. The conversion stops when the first non-digit char is 
+**	encountered and the current result value is returned.
+*/
+
+int				ft_atoi(const char *str)
 {
-	long int			is_neg;
+	t_bool			is_neg;
 	unsigned long int	res;
 	unsigned long int	prev_res;
 
 	is_neg = 1;
-	if (skip_ws((char **)&str, &is_neg))
+	if (ft_atoi_skip_ws((char **)&str, &is_neg))
 		return (0);
 	res = 0;
 	while (*str)

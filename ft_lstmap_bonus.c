@@ -6,12 +6,18 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 20:15:57 by abe            #+#    #+#                */
-/*   Updated: 2019/11/26 15:47:50 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/28 12:42:02 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
+
+/*
+**	Creates new list based on 'lst' where every node's content is passed to
+**	'f' and the return value is saved. If an allocation failes the 'del'
+**	function is used to cleanly free all the new lists contents.
+*/
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
