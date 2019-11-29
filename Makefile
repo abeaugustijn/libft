@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/28 23:49:53 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/29 12:17:53 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ BONUS_SRCS		=	lstadd_back\
 					lstlast\
 					lstnew\
 					lstsize\
+					lstmap\
 					lstcount_condition\
 					cchr\
 					strlen_c\

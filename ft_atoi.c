@@ -6,16 +6,16 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:45:05 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/28 11:23:26 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/29 11:41:56 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Function to handle the whitespaces, '+' and '-' chars at the start of a 
+**	Function to handle the whitespaces, '+' and '-' chars at the start of a
 **	atoi string. A pointer to the string and a pointer to a t_bool is given to
-**	store the 'is_neg' value is given. 
+**	store the 'is_neg' value is given.
 **	Returns 0 if the string is valid so far, 1 if this is not the case.
 */
 
@@ -51,13 +51,13 @@ static t_bool	ft_atoi_skip_ws(char **str, t_bool *is_neg)
 **	function returns -1 if the value was negative and 0 if it was not.
 **
 **	All whitespaces at the beginning of the string are skipped and there is a
-**	single sign allowed. The conversion stops when the first non-digit char is 
+**	single sign allowed. The conversion stops when the first non-digit char is
 **	encountered and the current result value is returned.
 */
 
 int				ft_atoi(const char *str)
 {
-	t_bool			is_neg;
+	t_bool				is_neg;
 	unsigned long int	res;
 	unsigned long int	prev_res;
 

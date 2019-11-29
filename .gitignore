@@ -4,3 +4,4 @@ bonus
 *.a
 *.o
 
+test.c
