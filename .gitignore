@@ -1,7 +1,6 @@
 .ccls
 a.out*
 bonus
-main.c
 *.a
 *.o
 

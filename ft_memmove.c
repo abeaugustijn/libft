@@ -6,7 +6,7 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 20:17:50 by abe            #+#    #+#                */
-/*   Updated: 2019/11/28 13:23:35 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/29 08:07:06 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				i;
+	size_t	i;
 
 	i = 0;
 	if (dest < src)
