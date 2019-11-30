@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 14:54:19 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/28 20:12:38 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 15:22:42 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,20 @@
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*res;
-	char	*b;
-	char	*e;
+	unsigned int	start;
+	size_t			len;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	b = (char*)s1;
-	e = (char*)s1 + ft_strlen(s1) - 1;
-	if (e < b)
+	start = 0;
+	len = 0;
+	while (ft_strchr(set, s1[start]) && s1[start])
+		start++;
+	if (!s1[start])
 		return (ft_strdup(""));
-	while (ft_strchr(set, *b) && *b)
-		b++;
-	while (ft_strchr(set, *e) && e > s1)
-		e--;
-	e++;
-	if (b >= e)
-		return (ft_strdup(""));
-	res = (char*)malloc(e - b + 1);
-	if (res == NULL)
-		return (NULL);
-	ft_strlcpy(res, b, e - b + 1);
-	return (res);
+	len = ft_strlen(s1) - start - 1;
+	while (ft_strchr(set, s1[start + len]) && s1[start + len])
+		len--;
+	len++;
+	return (ft_substr(s1, start, len));
 }

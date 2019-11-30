@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/30 14:00:52 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/30 15:20:54 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ $(NAME): $(OFILES)
 
 %.o: %.c
 	@echo "👾 Compiling: $<"
-	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
+	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES) -g
 
 clean: _clean
 	@echo "🧽 Cleaning..."
@@ -104,8 +104,40 @@ _clean:
 
 re: fclean all
 
-bonus: $(OFILES) $(BONUS_OFILES) $(NAME)
+bonus: vela $(OFILES) $(BONUS_OFILES) $(NAME)
 	@echo "🅱️  Linking bonus lib"
 	@$(AR_COMMAND) $(NAME) $(OFILES) $(BONUS_OFILES)
 	@touch bonus
 	@echo "❗️ Bonus done"
+
+vela:
+	@echo "\033[0;31m"
+	@echo "\t _    __________    ___ "
+	@echo "\t| |  / / ____/ /   /   |"
+	@echo "\t| | / / __/ / /   / /| |"
+	@echo "\t| |/ / /___/ /___/ ___ |"
+	@echo "\t|___/_____/_____/_/  |_|\n"
+	@echo "\033[0m"
+	@echo "   )__                     (__   ____)"
+	@echo "    _ )_                      (____)"
+	@echo "  __    )__            |>>>"
+	@echo "     ______)          /|             ___"
+	@echo "  _____)             / |\        ___(   )__"
+	@echo "                    /  | \      (_       __)"
+	@echo "                   /   |  \       (_  ___)"
+	@echo "                  /    |   \       (___)"
+	@echo "                 /     |    \\"
+	@echo "                /______|_____\\"
+	@echo "                    ___|__"
+	@echo "            _______/ooo__\\______/~"
+	@echo "            \                   |]"
+	@echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	@echo "   ~~~~         ~~~~~~ ~~~  ///  ~~~~~"
+	@echo "    ~~~~~  ~~~   ~~~   ___  \_/ ~~~~~   ~~~~"
+	@echo "     ~~~     (()))    ///\\ \ \   ~~~~~~~~"
+	@echo "            )))((((  (///\\)/ /"
+	@echo "   ~~~~  ~~ ((())))  _\___// / ~~~~~~~ ~~~"
+	@echo "   ~~~~~~  /)))((((\/ _   _ /  ~~~~~   ~~~~"
+	@echo "   ~~     / |\\_//| \~~ ~~~~~~~~ ~~"
+	@echo "       ~~~~~~~~ ~~~~~~~~~ ~~~~~~ ~~~~~~"
+	@echo "  ~~~~~ ~~~~~ ~~~~~~ ~~~~~   ~~~~~ ~~~~\n"

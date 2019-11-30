@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:46:45 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/28 18:27:04 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 14:26:45 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char*)s);
 		s++;
 	}
-	if (c == 0)
-		return ((void *)s);
-	return (NULL);
+	if (c)
+		return (NULL);
+	return ((void *)s);
 }

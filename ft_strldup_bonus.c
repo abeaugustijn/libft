@@ -6,7 +6,7 @@
 /*   By: aaugusti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 10:12:48 by aaugusti          #+#    #+#             */
-/*   Updated: 2019/11/28 19:36:56 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 14:25:26 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,16 @@
 
 char	*ft_strldup(const char *src, size_t n)
 {
-	size_t	src_len;
-	size_t	final_len;
+	size_t	len;
 	char	*res;
 
 	if (src == NULL)
 		return (NULL);
-	src_len = ft_strlen(src);
-	final_len = (src_len > n ? n : src_len) + 1;
-	res = (char *)malloc(final_len);
+	len = ft_strlen(src);
+	len = (len > n ? n : len) + 1;
+	res = (char *)malloc(len);
 	if (res == NULL)
 		return (NULL);
-	ft_strlcpy(res, src, final_len);
+	ft_strlcpy(res, src, len);
 	return (res);
 }

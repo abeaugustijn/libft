@@ -6,7 +6,7 @@
 /*   By: abe <abe@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 21:36:58 by abe            #+#    #+#                */
-/*   Updated: 2019/11/28 19:30:27 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 14:22:24 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 			i++;
 		}
 		dst[i] = '\0';
+		while (src[i])
+			i++;
 	}
-	return (ft_strlen(src));
+	else
+		return (ft_strlen(src));
+	return (i);
 }
