@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 16:28:34 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/28 13:25:43 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 13:51:53 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	unsigned char	*b_cpy;
 
-	i = 0;
-	while (i < len)
+	b_cpy = b;
+	while (len > 0)
 	{
-		((unsigned char*)b)[i] = (unsigned char)c;
-		i++;
+		*b_cpy = (unsigned char)c;
+		len--;
+		b_cpy++;
 	}
 	return (b);
 }
