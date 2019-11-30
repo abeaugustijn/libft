@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/28 11:11:06 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 10:46:28 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int					ft_inset(const char *set, char c);
 */
 
 void				*ft_memset(void *b, int c, size_t len);
-void				*ft_memcpy(void *dest, const void *src, size_t n);
+void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
