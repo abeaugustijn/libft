@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/29 12:17:53 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/30 12:12:52 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,10 +89,9 @@ $(NAME): $(OFILES)
 
 %.o: %.c
 	@echo "👾 Compiling: $<"
-	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES) -g
+	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
 clean: _clean
-	@rm -f bonus
 	@echo "🧽 Cleaning..."
 
 fclean: _clean
@@ -100,6 +99,7 @@ fclean: _clean
 	@rm -f $(NAME)
 
 _clean:
+	@rm -f bonus
 	@rm -f $(OFILES) $(BONUS_OFILES)
 
 re: fclean all
