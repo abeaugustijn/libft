@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/30 15:24:59 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/30 15:26:22 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,7 +104,7 @@ _clean:
 
 re: fclean all
 
-bonus: vela $(OFILES) $(BONUS_OFILES) $(NAME)
+bonus: $(OFILES) $(BONUS_OFILES) $(NAME)
 	@echo "🅱️  Linking bonus lib"
 	@$(AR_COMMAND) $(NAME) $(OFILES) $(BONUS_OFILES)
 	@touch bonus
