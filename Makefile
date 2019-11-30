@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/30 15:20:54 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/11/30 15:24:59 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ $(NAME): $(OFILES)
 
 %.o: %.c
 	@echo "👾 Compiling: $<"
-	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES) -g
+	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
 clean: _clean
 	@echo "🧽 Cleaning..."
