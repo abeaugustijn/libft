@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/29 11:41:13 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 19:51:31 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **	chars in the returned string is stored in to_add_len.
 */
 
-char			*ft_split_create_string(char const *s, char c,
+static char		*ft_split_create_string(char const *s, char c,
 		size_t *to_add_len)
 {
 	char	*res;

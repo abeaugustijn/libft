@@ -6,14 +6,14 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/12 10:33:48 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/30 14:24:24 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 19:52:08 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_substr_strldup(const char *src, size_t n)
+static char	*ft_substr_strldup(const char *src, size_t n)
 {
 	size_t	len;
 	char	*res;
@@ -35,7 +35,7 @@ char	*ft_substr_strldup(const char *src, size_t n)
 **	string if start is greater than the length of s.
 */
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	s_len;
 
