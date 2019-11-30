@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 11:47:31 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/28 12:58:05 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/11/30 20:20:22 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,9 @@ static int	ft_itoa_numlen(int n)
 
 static char	*ft_itoa_exception(int n)
 {
-	char	*res;
-
-	res = (char *)malloc(n == 0 ? 2 : 13);
-	if (res == NULL)
-		return (NULL);
-	if (n == 0)
-		ft_strlcpy(res, "0", 2);
-	else
-		ft_strlcpy(res, "-2147483648", 12);
-	return (res);
+	if (n)
+		return (ft_strdup("-2147483648"));
+	return (ft_strdup("0"));
 }
 
 /*
@@ -82,13 +75,13 @@ char		*ft_itoa(int n)
 	char	*res;
 	int		i;
 
-	is_neg = n < 0;
-	n_len = ft_itoa_numlen(n);
 	if (n == INT_MIN || n == 0)
 		return (ft_itoa_exception(n));
+	n_len = ft_itoa_numlen(n);
 	res = ft_itoa_get_mem((size_t)n_len + 1);
 	if (res == NULL)
 		return (NULL);
+	is_neg = n < 0;
 	if (is_neg)
 	{
 		*res = '-';
