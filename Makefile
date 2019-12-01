@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/11/30 15:27:01 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/12/01 22:32:19 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,6 @@ OFILES			=	$(SRCS:%=ft_%.o)
 BONUS_CFILES	=	$(BONUS_SRCS:%=ft_%_bonus.c)
 BONUS_OFILES	=	$(BONUS_SRCS:%=ft_%_bonus.o)
 
-INCLUDES		=	./includes
 FLAGS			=	-Wall -Werror -Wextra
 
 AR_COMMAND		= ar rs
@@ -89,7 +88,7 @@ $(NAME): $(OFILES)
 
 %.o: %.c
 	@echo "👾 Compiling: $<"
-	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
+	@gcc -o $@ -c $< $(FLAGS) -I
 
 clean: _clean
 	@echo "🧽  Cleaning..."
