@@ -6,7 +6,7 @@
 /*   By: aaugusti <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:45:05 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/29 11:41:56 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/12/02 10:31:06 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,9 @@ int				ft_atoi(const char *str)
 	if (ft_atoi_skip_ws((char **)&str, &is_neg))
 		return (0);
 	res = 0;
-	while (*str)
+	while (ft_isdigit(*str))
 	{
 		prev_res = res;
-		if (!ft_isdigit(*str))
-			break ;
 		res *= 10;
 		res += *str - '0';
 		if (prev_res > res)
