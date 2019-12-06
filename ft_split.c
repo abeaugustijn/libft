@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:29:47 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/30 19:51:31 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/12/06 12:58:59 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ static char		**ft_split_get_mem(char const *s, char c)
 	size_t	arr_size;
 
 	arr_size = 0;
-	if (c == '\0')
+	if (!c && *s)
 		arr_size++;
-	if (c != '\0' && *s != '\0')
+	if (c && *s)
 	{
 		prev = 0;
-		if (*s != c && *s)
+		if (*s != c)
 			arr_size++;
 		while (*s)
 		{
@@ -96,7 +96,7 @@ static int		ft_split_skip_c(char **s, char c)
 
 static char		**ft_split_remove_list(char **list, int n)
 {
-	while (*list && n >= 0)
+	while (n >= 0)
 	{
 		free(list[n]);
 		n--;
