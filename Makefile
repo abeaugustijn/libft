@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/12/06 15:42:11 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/12/06 15:49:32 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,8 @@ BONUS_SRCS		=	lstadd_back\
 					puthex_fd\
 					putnbr_ll_fd\
 					hexlen\
-					unsignedlen
+					unsignedlen\
+					putunsigned_fd
 
 CFILES			=	$(SRCS:%=ft_%.c)
 OFILES			=	$(SRCS:%=ft_%.o)
