@@ -1,7 +1,0 @@
-.ccls
-a.out*
-bonus
-*.a
-*.o
-
-test.c
