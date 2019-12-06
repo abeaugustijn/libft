@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2019/11/30 10:46:28 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/12/06 09:48:06 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_n_fd(char *s, size_t n, int fd);
 void				ft_puthex_fd(unsigned long long n, int fd, int cap);
+void				ft_putnbr_ll_fd(long long int n, int fd);
 
 /*
 **	list functions

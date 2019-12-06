@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2019/12/01 22:36:36 by aaugusti         ###   ########.fr        #
+#    Updated: 2019/12/06 10:30:13 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ BONUS_SRCS		=	lstadd_back\
 					atoi_ull\
 					atoi_ui\
 					puthex_fd\
+					putnbr_ll_fd\
 					hexlen
 
 CFILES			=	$(SRCS:%=ft_%.c)
