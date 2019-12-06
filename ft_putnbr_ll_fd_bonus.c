@@ -6,7 +6,7 @@
 /*   By: aaugusti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 09:50:31 by aaugusti          #+#    #+#             */
-/*   Updated: 2019/12/06 10:29:29 by aaugusti         ###   ########.fr       */
+/*   Updated: 2019/12/06 13:23:04 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		ft_putnbr_ll_fd(long long int n, int fd)
 	{
 		ft_putnbr_ll_fd(-9, fd);
 		ft_putnbr_ll_fd(223372036854775808, fd);
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
