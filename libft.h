@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2020/01/17 12:04:15 by aaugusti         ###   ########.fr       */
+/*   Updated: 2020/01/21 13:57:40 by abe              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ typedef char		t_bool;
 #  define TRUE 1
 # endif
 
+# ifndef NOLIST
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+# endif
 
 /*
 **	atoi functions
@@ -113,6 +115,7 @@ void				ft_putunsigned_fd(unsigned long long n, int fd);
 **	list functions
 */
 
+# ifndef NOLIST
 void				ft_lstprint(t_list *lst);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **alst, t_list *new);
@@ -125,6 +128,7 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 int					ft_lstcount_condition(t_list *lst, int (*f)(void *));
+# endif
 
 /*
 **	numlen
