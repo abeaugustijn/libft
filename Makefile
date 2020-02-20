@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2020/01/27 11:05:40 by aaugusti         ###   ########.fr        #
+#    Updated: 2020/02/20 13:54:55 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ SRCS			=	atoi\
 					strmapi\
 					strtrim\
 					substr\
-					strdup
+					strdup\
+					strcmp
 
 BONUS_SRCS		=	lstadd_back\
 					lstadd_front\
