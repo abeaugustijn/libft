@@ -6,7 +6,7 @@
 /*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2020/03/23 13:41:45 by aaugusti         ###   ########.fr       */
+/*   Updated: 2020/03/24 20:02:19 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ char				*ft_strdup_c(const char *s1, char c);
 char				*ft_strldup(const char *src, size_t n);
 int					ft_inset(const char *set, char c);
 size_t				ft_arrlen(char **arr);
+void				ft_arrfree(char **arr);
 
 /*
 **	memory functions

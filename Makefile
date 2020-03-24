@@ -6,7 +6,7 @@
 #    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2020/03/23 13:42:57 by aaugusti         ###   ########.fr        #
+#    Updated: 2020/03/24 20:02:45 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRCS			=	atoi\
 					strdup\
 					strcmp
 
-BONUS_SRCS		=	arrlen\
+BONUS_SRCS		=	arrfree\
+					arrlen\
 					atoi_ui\
 					atoi_ul\
 					atoi_ull\
