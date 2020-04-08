@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
+#                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
-#                                                      +:+                     #
-#    By: aaugusti <aaugusti@student.codam.nl>         +#+                      #
-#                                                    +#+                       #
-#    Created: 2019/10/29 11:05:37 by aaugusti       #+#    #+#                 #
-#    Updated: 2020/02/20 13:54:55 by aaugusti         ###   ########.fr        #
+#                                                     +:+ +:+         +:+      #
+#    By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/04/08 19:44:01 by aaugusti          #+#    #+#              #
+#    Updated: 2020/04/08 19:44:01 by aaugusti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,30 +48,32 @@ SRCS			=	atoi\
 					strdup\
 					strcmp
 
-BONUS_SRCS		=	lstadd_back\
+BONUS_SRCS		=	arrfree\
+					arrlen\
+					atoi_ui\
+					atoi_ul\
+					atoi_ull\
+					cchr\
+					hexlen\
+					intlen\
+					lstadd_back\
 					lstadd_front\
 					lstclear\
+					lstcount_condition\
 					lstdelone\
 					lstiter\
 					lstlast\
+					lstmap\
 					lstnew\
 					lstsize\
-					lstmap\
-					lstcount_condition\
-					cchr\
-					strlen_c\
-					strdup_c\
-					strldup\
-					intlen\
-					putstr_n_fd\
-					atoi_ul\
-					atoi_ull\
-					atoi_ui\
 					puthex_fd\
 					putnbr_ll_fd\
-					hexlen\
+					putstr_n_fd\
+					putunsigned_fd\
+					strdup_c\
+					strldup\
+					strlen_c\
 					unsignedlen\
-					putunsigned_fd
 
 CFILES			=	$(SRCS:%=ft_%.c)
 OFILES			=	$(SRCS:%=ft_%.o)

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_arrfree_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/08 19:42:58 by aaugusti          #+#    #+#             */
-/*   Updated: 2020/04/08 19:42:58 by aaugusti         ###   ########.fr       */
+/*   Created: 2020/03/23 13:40:51 by aaugusti          #+#    #+#             */
+/*   Updated: 2020/03/24 20:01:59 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 #include <stdlib.h>
 
 /*
-**	Create a new node with 'content'.
+**	Frees a string array, like the one ft_split returns.
+**
+**	@param {char **} arr
 */
 
-t_list	*ft_lstnew(void *content)
+void	ft_arrfree(char **arr)
 {
-	t_list	*res;
+	int	i;
 
-	res = (t_list*)malloc(sizeof(t_list));
-	if (res == NULL)
-		return (NULL);
-	res->content = content;
-	res->next = NULL;
-	return (res);
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

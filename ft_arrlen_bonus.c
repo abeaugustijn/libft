@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/08 19:42:58 by aaugusti          #+#    #+#             */
-/*   Updated: 2020/04/08 19:42:58 by aaugusti         ###   ########.fr       */
+/*   Created: 2020/03/23 13:40:51 by aaugusti          #+#    #+#             */
+/*   Updated: 2020/03/23 13:41:24 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
-#include <stdlib.h>
 
-/*
-**	Create a new node with 'content'.
-*/
-
-t_list	*ft_lstnew(void *content)
+size_t	ft_arrlen(char **arr)
 {
-	t_list	*res;
+	size_t	res;
 
-	res = (t_list*)malloc(sizeof(t_list));
-	if (res == NULL)
-		return (NULL);
-	res->content = content;
-	res->next = NULL;
+	res = 0;
+	while (arr[res])
+		res++;
 	return (res);
 }

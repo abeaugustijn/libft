@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
+/*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
-/*                                                     +:+                    */
-/*   By: aaugusti <aaugusti@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2019/10/28 15:28:28 by aaugusti       #+#    #+#                */
-/*   Updated: 2020/01/21 13:57:40 by abe              ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/08 19:43:58 by aaugusti          #+#    #+#             */
+/*   Updated: 2020/04/08 19:43:58 by aaugusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ typedef char		t_bool;
 # endif
 
 # ifndef NOLIST
+
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
 # endif
 
 /*
@@ -84,6 +86,8 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strdup_c(const char *s1, char c);
 char				*ft_strldup(const char *src, size_t n);
 int					ft_inset(const char *set, char c);
+size_t				ft_arrlen(char **arr);
+void				ft_arrfree(char **arr);
 
 /*
 **	memory functions
@@ -116,6 +120,7 @@ void				ft_putunsigned_fd(unsigned long long n, int fd);
 */
 
 # ifndef NOLIST
+
 void				ft_lstprint(t_list *lst);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **alst, t_list *new);
@@ -128,6 +133,7 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 int					ft_lstcount_condition(t_list *lst, int (*f)(void *));
+
 # endif
 
 /*
