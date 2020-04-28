@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:    :+:             #
 #                                                     +:+ +:+         +:+      #
 #    By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/08 19:44:01 by aaugusti          #+#    #+#              #
-#    Updated: 2020/04/08 19:44:01 by aaugusti         ###   ########.fr        #
+#    Updated: 2020/04/28 11:28:37 by aaugusti      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ SRCS			=	atoi\
 					strtrim\
 					substr\
 					strdup\
-					strcmp
+					strcmp\
 
 BONUS_SRCS		=	arrfree\
 					arrlen\
@@ -74,6 +74,7 @@ BONUS_SRCS		=	arrfree\
 					strldup\
 					strlen_c\
 					unsignedlen\
+					xalloc\
 
 CFILES			=	$(SRCS:%=ft_%.c)
 OFILES			=	$(SRCS:%=ft_%.o)
