@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libft.h                                            :+:    :+:            */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaugusti <aaugusti@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/08 19:43:58 by aaugusti          #+#    #+#             */
-/*   Updated: 2020/04/08 19:43:58 by aaugusti         ###   ########.fr       */
+/*   Updated: 2020/04/28 11:29:00 by aaugusti      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,14 @@ void				ft_arrfree(char **arr);
 **	memory functions
 */
 
-void				*ft_memset(void *b, int c, size_t len);
-void				*ft_memcpy(void *dst, const void *src, size_t n);
-void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
-void				*ft_memmove(void *dest, const void *src, size_t n);
-void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_calloc(size_t count, size_t size);
+void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void				*ft_memchr(const void *s, int c, size_t n);
+void				*ft_memcpy(void *dst, const void *src, size_t n);
+void				*ft_memmove(void *dest, const void *src, size_t n);
+void				*ft_memset(void *b, int c, size_t len);
+void				*ft_xalloc(size_t size);
 void				ft_bzero(void *s, size_t n);
 
 /*
